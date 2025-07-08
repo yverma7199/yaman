@@ -1,0 +1,85 @@
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --dark-color: #2c3e50;
+    --light-color: #ecf0f1;
+    --font-main: 'Segoe UI', sans-serif;
+    --header-height: 80px;
+    --header-height-mobile: 60px;
+    --vh: 1vh;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body, #root {
+    height: 100%;
+    width: 100%;
+  }
+  
+  .app {
+    height: 100vh;
+    width: 100vw;
+    font-family: var(--font-main);
+  }
+  
+  .main-container {
+    height: 100%;
+    width: 100%;
+    position: relative;
+  }
+  
+  .content {
+    height: 100%;
+    width: 100%;
+  }
+  
+  section {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 2rem;
+  }
+
+  body, section {
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .content > section {
+    padding-top: 80px;
+    min-height: calc(100vh - 80px);
+  }
+
+  @media (max-width: 768px) {
+    .content > section {
+      overflow-y: auto;
+      padding-top: 60px;
+      min-height: calc(100vh - 60px);
+    }
+  }
+
+  .about-section {
+    padding-top: var(--header-height-mobile);
+    min-height: calc(var(--vh, 1vh) * 100 - var(--header-height-mobile));
+  }
+  
+  @media (min-width: 769px) {
+    .about-section {
+      padding-top: var(--header-height);
+      min-height: calc(100vh - var(--header-height));
+    }
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+  }
+  
+  .content > section {
+    background-color: var(--bg-primary);
+  }
